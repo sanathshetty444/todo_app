@@ -1,0 +1,401 @@
+body{
+    min-width: 800px;
+    background-color: honeydew;
+    margin: -1px;
+    overflow-x: hidden;
+    color: white;
+    background-image: url("https://wallpaperaccess.com/full/1962204.jpg");
+    background-size: cover;
+    font-family: Candara;
+}
+.alert{
+  background-color: #eec0c6;
+background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+
+  display: flex;
+  justify-content: space-around;
+  color: black;
+}
+.ok-button{
+  background-color: #a4508b;
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+  
+ display: flex;
+  text-align: center;
+  justify-content: space-around;
+  align-items: center;
+  width: 5%;
+  height: 5vh;
+  margin-top: 3vh;
+  transition: all ease-in-out 1s;
+  border-radius: 5%;
+}
+
+.ok-button:hover{
+  width: 7%;
+  height: 8vh;
+  
+}
+.ok-link-button{
+ 
+  width: 5%;
+  height: 3vh;
+  cursor: pointer;
+
+}
+h1{
+display: inline;
+}
+#title{
+    text-align: center;
+    font-weight: bold;
+    
+    background: -webkit-linear-gradient(315deg, #20bf55 0%, #01baef 74%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    
+    
+}
+#description i,#title i{
+  font-size: 250%;
+}
+#input_desc::placeholder{
+    font-size: large;
+    font-weight: bold;
+}
+#description{
+    text-align: center;
+    height: 10vh;
+    /* border-top: 2px solid blueviolet; */
+    /* border-bottom: 2px solid blueviolet; */
+    
+    
+    font-weight: bold;
+}
+#date{
+  display: inline-block;
+}
+#input_desc{
+    display: inline-block;
+   background-image: inherit;
+   margin-left: 5vw;
+    width: 80%;
+    height: 8vh;
+    border: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 2vh;
+}
+#input_desc:focus{
+    outline: none;
+
+}
+
+
+#outer{
+    display: flex;
+    margin-top: 5px;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    /* border-bottom: 2px solid blueviolet; */
+   
+    
+
+}
+#category,#calendar{
+  display: inline-block;
+  width: 30%;
+  
+ 
+  
+}
+
+.classic,#date{
+    display: block;
+    width: 80%;
+}
+select {
+
+    /* styling */
+    background-color: white;
+    border: thin solid blue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+  
+    /* reset */
+  
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  
+  
+  /* arrows */
+  
+  select.classic {
+    background-image:
+      linear-gradient(45deg, transparent 50%, blue 50%),
+      linear-gradient(135deg, blue 50%, transparent 50%),
+      linear-gradient(to right, skyblue, skyblue);
+    background-position:
+      calc(100% - 20px) calc(1em + 2px),
+      calc(100% - 15px) calc(1em + 2px),
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+  }
+  
+  select.classic:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      linear-gradient(to right, gray, gray);
+    background-position:
+      calc(100% - 15px) 1em,
+      calc(100% - 20px) 1em,
+      100% 0;
+    background-size:
+      5px 5px,
+      5px 5px,
+      2.5em 2.5em;
+    background-repeat: no-repeat;
+    border-color: grey;
+    outline: 0;
+  }
+  a{
+      text-decoration: none;
+      color: white;
+  }
+  #controls{
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+  }
+  .button{
+    font-size: 24px;
+    background-color: rgba(44, 37, 37, 0.808);
+    border: none;
+    padding: 20px 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 10%;
+    background-color: #923cb5;
+background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+
+  }
+  .button:hover {
+    background-color: rgb(209, 41, 209); /* Green */
+    color: white;
+  }
+  #content-outer{
+    display: flex;
+    height: 40vh;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: scroll;
+    overflow-x: hidden;
+    
+    
+
+  }
+  #delete-button{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 30%;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -15%;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  h4{
+    display: inline;
+  }
+  .container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    
+}
+ 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.5); 
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 255, 98));
+}
+.category-personal{
+  background-color: red;
+  width:5.2rem;
+  height: 10%;
+  text-align: center;
+  
+  border-radius: 8%;
+  display: inline-block;
+  font-size: large;
+  margin-left: 15%;
+}
+.category-work{
+  background-color: springgreen;
+  width:5.2rem;
+  height: 10%;
+  text-align: center;
+  color: black;
+  border-radius: 8%;
+  display: inline-block;
+  font-size: large;
+  margin-left: 15%;
+}
+.category-school{
+  background-color: coral;
+  width:5.2rem;
+  height: 10%;
+  text-align: center;
+  color: black;
+  border-radius: 8%;
+  display: inline-block;
+  font-size: large;
+  margin-left: 15%;
+}
+.category-other{
+  background-color: darkgray;
+  width:5.2rem;
+  height: 10%;
+  text-align: center;
+  color: black;
+  border-radius: 8%;
+  display: inline-block;
+  font-size: large;
+  margin-left: 15%;
+}
+.inner-category{
+  margin-top: 5%;
+
+}
+#before-delete{
+  font-size: small;
+  width: 60vw;
+}
+.subtitle{
+  
+  background: -webkit-linear-gradient(red, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#completed{
+  width: 30vw;
+}
+

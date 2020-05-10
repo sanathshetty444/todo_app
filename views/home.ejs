@@ -1,0 +1,168 @@
+<html>
+    <head>
+        <title>
+            My TODO APP
+            
+        </title>
+        <link rel="icon" href="Attachment.png" type="image/gif" sizes="16x16">
+        <script src="https://kit.fontawesome.com/fb2f2264aa.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet"  href="home.css">
+    </head>
+    <body>
+        <% if(success=="select to delete"){%>
+
+        
+        <div style="text-align: center;" class="alert" role="alert">
+           <h1> ALERT : Select an activity to delete</h1>
+          </div>
+       <% } else if(success=="Added successfully"){%>
+        <div style="text-align: center;" class="alert" role="alert">
+            <h1> Added TO The List</h1>
+
+
+            <div class="ok-button" ><a href="/ok"><div class="ok-link-button"> OK </div></a></div>
+           
+        
+        </div>
+           <%} else if(success=="deleted"){%>
+            <div style="text-align: center;" class="alert" role="alert">
+                <h1> Congratulations!!! You have successfully striked off a task</h1>
+                <div class="ok-button" ><a href="/ok"><div class="ok-link-button"> OK </div></a></div>
+               </div>
+
+        <%}%>
+
+
+        <div id="title">
+            <i class="fa fa-paperclip" aria-hidden="true"></i> &nbsp <h1>TODO APP</h1>
+        </div>
+        <form action="/add" method="POST">
+            
+            <div id="description">
+
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                <input id=input_desc type="text" name="description" placeholder="Tasks">
+            </div>
+            <div id ="outer">
+                <div id="category">
+                   <h2>  <i class="fa fa-exclamation" aria-hidden="true"></i> &nbsp Category</h2>
+                    <select name="dropdown" class="classic">
+                        <option hidden>--SELECT--</option>
+                        <option>Personal</option>
+                        <option>Work</option>
+                        <option>School</option>
+                        <option>Other</option>
+                      </select>
+                </div>
+                <div id="calendar">
+                <h2> <i class="fa fa-calendar-plus" aria-hidden="true"></i> &nbsp Calendar</h2>
+                    <input id="date" name="date" type="date" style="height: 35%;">
+                </div>
+                
+                
+            </div>
+            <div id="controls"  class="tooltip">
+                <button class="button" type="submit"><i class="far fa-paper-plane"></i>&nbsp &nbsp ADD</button>
+                <span class="tooltiptext">Click to add to the list</span>
+
+               
+            </div>
+
+            
+            
+        </form>
+        
+    <form action='/delete' method="GET">
+    <div id="content-outer">
+        <div id="before-delete">
+           
+                <h1 class="subtitle"> <i class="fa fa-bell" aria-hidden="true"></i> REMAINING</h1>
+                <br><br><br>
+
+            <% for(let i of Todo_database){%>
+                
+            <label class="container">
+               <h4 ><%=i.task%></h4>
+                
+                
+                
+                <% if(i.category=="Personal"){%>
+                    <div class="category-personal" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                
+
+               <% } else if(i.category=="Work"){%>
+                <div class="category-work" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                <% }else if(i.category=="School"){%>
+
+                    <div class="category-school" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                    <% }else{%>
+                        <div class="category-other" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                        
+                    <% }%>
+
+                
+                <br>
+                <h6 >Date &nbsp :&nbsp<%=i.date%></h6><br>
+               <input  type="checkbox" name="checkbox" value=<%=i._id%>  >
+               <span class="checkmark"></span>
+            </label>
+                  <%}%> 
+                
+                  
+           
+    
+        </div>
+        <div id="completed">
+            <h1  class="subtitle"> <i class="fa fa-archive" aria-hidden="true"></i>  COMPLETED</h1>
+            <% for(let i of Todo_completed_database){%>
+                <label class="container">
+                <ul type="square">  
+                   
+                    <li>&nbsp<%=i.task%>
+                        <% if(i.category=="Personal"){%>
+                            <div class="category-personal" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                        
+        
+                       <% } else if(i.category=="Work"){%>
+                        <div class="category-work" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                        <% }else if(i.category=="School"){%>
+        
+                            <div class="category-school" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                            <% }else{%>
+                                <div class="category-other" ><div class="inner-category"><h4>&nbsp<%=i.category%></h4></div></div>
+                                
+                            <% }%>
+                        <h6>Date &nbsp :&nbsp<%=i.date%></h6></li> <br> 
+                    
+                   </ul> 
+                </label> 
+                   
+             <%}%> 
+        </div>
+
+    </div>
+        <div id="delete-button" class="tooltip">
+            <button type="submit"  class="button"><i class="far fa-window-close"></i>&nbsp &nbsp Done</button>
+            <span class="tooltiptext">Select the activities to add to completed</span>
+         </div>
+    </form>
+        
+        
+
+
+    
+    
+    <script src="home.js"></script>
+    <script src="jquery-3.4.1.js"></script>
+    
+
+        
+
+
+
+
+
+
+    </body>
+</html>
